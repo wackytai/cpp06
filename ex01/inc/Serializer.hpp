@@ -1,13 +1,14 @@
 #ifndef SERIALIZER_HPP
 # define SERIALIZER_HPP
 # include <iostream>
+# include <stdint.h>
 # include "Data.hpp"
 
 class Serializer
 {
 	private:	
 		Serializer();
-		Serializer( const Serializer &obj )
+		Serializer( const Serializer &obj );
 
 	public:
 		~Serializer();
