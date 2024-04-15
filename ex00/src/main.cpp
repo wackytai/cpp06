@@ -8,7 +8,8 @@ int	main ( int argc, char** argv )
 		return 1;
 	}
 
-	ScalarConverter	obj(argv[1]);
+	std::string str(argv[1]);
+	ScalarConverter::convert(str);
 
 	obj.convert(obj);
 	
