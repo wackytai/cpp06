@@ -17,7 +17,16 @@ ScalarConverter &ScalarConverter::operator=( const ScalarConverter &object )
 
 void	ScalarConverter::convert( std::string str )
 {
-	int type = setType(str);
+	int type;
+	
+	try
+	{
+		type = setType(str);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 
 	switch (type)
 	{
@@ -254,6 +263,11 @@ int	ScalarConverter::setType( std::string str )
 	else if (checkPseudoLit(str))
 		return 5;
 	else
-		return 0;
+		throw InvalidInputException();
 
+}
+
+const char* ScalarConverter::InvalidInputException::what() const throw()
+{
+	return "Error: invalid input.";
 }

@@ -31,6 +31,11 @@ class ScalarConverter
 		static bool		checkDouble ( std::string str );
 		static bool 	checkPseudoLit( std::string str );
 		static int		setType( std::string str );
+		class InvalidInputException : public std::exception
+		{
+			public:
+				virtual const char* what() const throw();
+		};
 };
 
 #endif
