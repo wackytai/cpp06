@@ -10,8 +10,6 @@ int	main ( int argc, char** argv )
 
 	std::string str(argv[1]);
 	ScalarConverter::convert(str);
-
-	obj.convert(obj);
 	
 	return 0;
 }

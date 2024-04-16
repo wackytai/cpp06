@@ -54,7 +54,7 @@ void	ScalarConverter::convert( std::string str )
 void	ScalarConverter::convertInt( std::string str )
 {
 	char c;
-	int i;
+	double i;
 	float f;
 	double d;
 
@@ -112,7 +112,7 @@ void	ScalarConverter::convertChar( std::string str )
 void	ScalarConverter::convertFloat( std::string str )
 {
 	char c;
-	int i;
+	double i;
 	float f;
 	double d;
 	std::istringstream iss(str);
@@ -142,7 +142,7 @@ void	ScalarConverter::convertFloat( std::string str )
 void	ScalarConverter::convertDouble( std::string str )
 {
 	char c;
-	int i;
+	double i;
 	float f;
 	double d;
 	std::istringstream iss(str);
@@ -171,10 +171,20 @@ void	ScalarConverter::convertDouble( std::string str )
 
 void	ScalarConverter::convertPseudoLit( std::string str )
 {
-	char c;
-	int i;
-	float f;
-	double d;
+	std::cout << "char: impossible" << std::endl;
+	std::cout << "int: impossible" << std::endl;
+
+	if (str == "+inff" || str == "-inff" || str == "nanf")
+		std::cout << "float: " << str << std::endl;
+	else
+		std::cout << "float: " << str << "f" << std::endl;
+	if (str == "+inff" || str == "-inff" || str == "nanf")
+	{
+		std::string s = str.substr(0, str.length() - 1);
+		std::cout << "double: " << s << std::endl;
+	}
+	else
+		std::cout << "double: " << str << std::endl;
 }
 
 
