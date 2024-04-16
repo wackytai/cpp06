@@ -1,4 +1,4 @@
-NAME = converter
+NAME = convert
 SOURCES = $(wildcard ./src/*.cpp)
 CC = @c++
 CFLAGS = -std=c++98 -pedantic -g -Wall -Wextra -Werror -fsanitize=address,undefined

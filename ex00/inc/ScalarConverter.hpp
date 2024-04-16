@@ -3,12 +3,14 @@
 # include <iostream>
 # include <iomanip>
 # include <sstream>
+# include <stdlib.h>
 # include <cfloat>
 # include <cstring>
 # include <string>
 # include <limits>
 # include <climits>
 # include <cmath>
+# include <exception>
 
 class ScalarConverter
 {
@@ -34,7 +36,7 @@ class ScalarConverter
 		class InvalidInputException : public std::exception
 		{
 			public:
-				virtual const char* what() const throw();
+				const char* what() const throw();
 		};
 };
 
